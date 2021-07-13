@@ -2,6 +2,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
 
 /* common styles or utilities */
+*{
+    margin: 0;
+    padding: 0;
+}
 body{
     font-family: 'Poppins', sans-serif;
     background-color: #F3F1FF;
@@ -15,7 +19,7 @@ main{
     background-color: #FFFFFF;
     width: 870px;
     padding: 30px;
-    margin-top: 21px;
+    margin-top: 30px;
     border-radius: 5px;
 }
 hr{
@@ -23,6 +27,50 @@ hr{
     margin-bottom: 27px;
 }
 
+/* header style */
+header{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 94px;
+    background-color: #562EFF;
+}
+nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 930px;
+    height: 94px;
+}
+.nav-left a{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 24px;
+}
+.logo{
+    width: 40.42px;
+    height: 51px;
+}
+.company-name{
+    color: white;
+    margin-left: 10px;
+}
+.nav-right ul{
+    display: flex;
+    align-items: center;
+}
+.nav-right ul li{
+    list-style: none;
+    margin-right: 30px;
+}
+.nav-right ul li a{
+    text-decoration: none;
+    color: white;
+    font-weight: 300;
+}
 /* top players style */
 .top-players{
     margin-bottom: 30px;
@@ -30,7 +78,7 @@ hr{
 .section-title{
     color: #562EFF;
     font-size: 24px;
-    margin-top: 3px;
+    margin-bottom: 40px;
 }
 .players{
     display: grid;
@@ -89,6 +137,11 @@ hr{
     grid-template-columns: repeat(3, 1fr);
     grid-column-gap: 24px;
 }
+.course{
+    padding: 25px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 5px gainsboro;
+}
 .course .course-banner img{
     width: 224px;
     height: 104px;
@@ -112,4 +165,38 @@ hr{
     color:#FF4A60;
     border-radius: 15px;
     padding: 0 5px;
+}
+
+/* ----------------
+     Media Query 
+----------------- */
+/* Mobile */
+@media only screen and (max-width: 688px) { 
+    .container{
+        width: 100%;
+    }
+    .players, .blogs, .courses{
+       grid-template-columns: repeat(1, 1fr);     
+   }
+   .player, .blog{
+       flex-direction: column;
+   }
+}
+/* Tablet */
+@media only screen and (min-width: 688px) and (max-width: 992px){
+    .container{
+        width: 100%;
+    }
+    .nav-right ul li{
+        margin-right: 10px;
+    }
+    .players, .courses{
+       grid-template-columns: repeat(2, 1fr);    
+    }
+    .player{
+        flex-direction: column;
+    }
+    .blogs{
+        grid-template-columns: repeat(1, 1fr);    
+    }
 }
